@@ -1,0 +1,191 @@
+@charset "UTF-8";
+video {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -100;
+}
+
+:root {
+  --data-color-primary: #212227;
+  --data-color-secondary: #606060;
+  --data-color-mid: #EBEBEB;
+  --data-color-white: #FFFFFF;
+}
+
+.navigation {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 25px;
+  right: 25px;
+  background: var(--data-color-white);
+  z-index: 11111;
+  overflow: hidden;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0s, 0.75s;
+  padding: 0;
+  margin: 0;
+}
+
+.menuToggle {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: var(--data-color-primary);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.menuToggle::before {
+  content: "≡";
+  position: absolute;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
+.navigation.active {
+  width: 250px;
+  height: 350px;
+  transition: height 0.25s, width 0.25s;
+  transition-delay: 0s, 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.menuToggle.active {
+  background-color: var(--data-color-secondary);
+}
+
+.menuToggle.active::before {
+  transform: rotate(360deg);
+  content: "x";
+}
+
+.navigation ul {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 0;
+}
+
+.navigation li {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  transition: all ease-in-out 0.6s;
+}
+
+.navigation li:hover {
+  background: var(--data-color-mid);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 85%;
+  bottom: 5px;
+}
+
+.navigation a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  color: var(--data-color-primary);
+}
+
+.icon {
+  position: relative;
+  display: block;
+  min-width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.icon ion-icon {
+  color: var(--data-color-primary);
+}
+
+.title {
+  position: relative;
+  display: block;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.active-page {
+  background: var(--data-color-mid);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+:root {
+  --data-color-primary: #212227;
+  --data-color-secondary: #606060;
+  --data-color-mid: #EBEBEB;
+  --data-color-white: #FFFFFF;
+}
+
+.gloss {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.contact-container {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background: rgba(255, 255, 255, 0.7254901961);
+  background-image: url(../assets/full.png);
+  background-position: right 120px top 0px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.box-about {
+  background: rgba(255, 255, 255, 0.431372549);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: #393939;
+}
+
+.b {
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  transform: 5s ease-in-out;
+}
+
+.b:hover {
+  box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.b2 {
+  border: blue 1px solid;
+  height: 90%;
+}/*# sourceMappingURL=style.css.map */

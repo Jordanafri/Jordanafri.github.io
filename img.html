@@ -1,0 +1,29 @@
+<script src="https://scripts.sirv.com/sirvjs/v3/sirv.js"></script>
+<div class="figure">
+  <a href="https://www.example.com/">
+  <img class="Sirv image-main" src="./assets/download.png">
+  <img class="Sirv image-hover" src="./assets/full.png">
+  </a>
+</div>
+
+<style>
+  /*  Rollover image styles  */
+  .figure {
+    position: relative;
+    width: 360px; /* can be omitted for a regular non-lazy image */
+    max-width: 100%;
+  }
+  .figure img.Sirv.image-hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  .figure:hover img.Sirv.image-hover {
+    opacity: 1;
+  }
+</style>
