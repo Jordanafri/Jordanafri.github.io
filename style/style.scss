@@ -4,11 +4,18 @@
 @import 'gloss';
 @import 'contact';
 @import 'about';
+@import 'project';
+@import 'buttons';
 
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf);
+}
 *{
     padding: 0;
     box-sizing: border-box;
     margin: 0;
+    font-family: "Montserrat", sans-serif;
 }
 body{
     height: 100vh;
