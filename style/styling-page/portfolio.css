@@ -1,0 +1,30 @@
+#portfolio{
+  padding: 40px;
+  margin: 0 auto;
+}
+.gallery-title{
+  font-size: 36px;
+  color: black;
+  text-align: center;
+  font-weight: 700;
+  padding: 40px 20px 60px;
+}
+.filter-button{
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  margin-bottom: 30px;
+}
+.filter-button:hover{
+  background: black;
+  color: #fff; 
+}
+.btn-default:active .filter-button:active{
+  background: black;
+  color: #fff;
+}
+.gallery_product{
+  margin-bottom: 30px;
+}

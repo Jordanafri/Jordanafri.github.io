@@ -1,0 +1,37 @@
+.contactTitle{
+    font-weight: bolder;
+}
+.semi-Tab{
+    width: 100%;
+   
+}
+.semi-Tab1{
+    height: 40%;
+}
+.semi-Tab2{
+   
+    height: 10%;
+}
+.semi-Slot{
+    width: 100%;
+    font-weight: 900;
+}
+
+
+
+@media screen and (min-width: 576px){
+    .semi-Slot{
+        width: 100%;
+        /* border: 1px solid chartreuse; */
+    }
+   
+}
+
+@media screen and (min-width: 992px){
+    .semi-Slot{
+        width: 60%;
+        border: 1px solid black;
+    }
+   
+    
+}
