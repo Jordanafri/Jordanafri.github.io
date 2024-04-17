@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="javblac.css">
+</head>
+<style>
+    .r1{border: 1px solid black;}
+    .r2{border: 1px solid blue;}
+    .r3{border: 1px solid blueviolet;}
+    .r4{border: 1px solid greenyellow;}
+</style>
+<body>
+    <div class="section">
+        <div class="cont-img">
+            <img src="./sa.jpg" class="img-g r1" alt="">
+            <div class="caracoul r3">
+                <div id="box1" class="box select" onclick="slider('sa.jpg')"></div>
+                <div id="box2" class="box" onclick="slider('sd.jpg')"></div>
+                <div id="box3" class="box" onclick="slider('sf.jpg')"></div>
+                
+            </div>
+        </div>
+
+        <div class="info-box">
+
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach(box =>{
+            box.addEventListener('click', () =>{
+                boxes.forEach(b => b.classList.remove('select'));
+                box.classList.add('select')
+            })
+        })
+        function slider(anything){
+            document.querySelector('.img-g').src = anything;
+
+        }
+    </script>
+</body>
+</html>
