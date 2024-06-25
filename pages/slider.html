@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .skills-section {
+            margin-top: 50px;
+            overflow: hidden;
+        }
+        .skills-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .skills-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* For Firefox */
+        }
+        .skills-wrapper::-webkit-scrollbar {
+            display: none; /* For Chrome, Safari, and Opera */
+        }
+        .skill-set {
+            display: flex;
+            flex-wrap: nowrap;
+            scroll-snap-align: start;
+        }
+        .skill {
+            flex: 0 0 auto;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container skills-section">
+        <h2 class="skills-title">Skills</h2>
+        <div class="skills-wrapper">
+            <div class="skill-set">
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">React</div>
+                <div class="skill">Angular</div>
+                <div class="skill">Vue</div>
+                <div class="skill">Node.js</div>
+                <div class="skill">Python</div>
+                <!-- Add more skills as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for duplicating the skill set to create an infinite scroll effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillSet = document.querySelector('.skill-set');
+            const skillSetClone = skillSet.cloneNode(true);
+            skillSet.appendChild(skillSetClone);
+        });
+    </script>
+</body>
+</html>
