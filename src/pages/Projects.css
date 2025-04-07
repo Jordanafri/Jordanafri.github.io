@@ -1,0 +1,82 @@
+/* Projects.css */
+
+.projects-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+}
+
+.project-item {
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.project-image-carousel {
+  flex: 2;
+  overflow-x: auto; /* Enable horizontal scrolling for carousel */
+  white-space: nowrap; /* Prevent image wrapping */
+  margin-right: 20px;
+}
+
+.carousel-image {
+  max-height: 200px; /* Limit image height */
+  margin-right: 10px; /* Space between images */
+  border-radius: 4px;
+  display: inline-block; /* Display images in a row */
+}
+
+.project-details {
+  flex: 1;
+}
+
+.repo-link {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #222;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.repo-link:hover {
+  background-color: #333;
+}
+
+.project-tech {
+  margin-top: 10px;
+}
+
+.tech-badge {
+  background-color: #333;
+  color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 5px;
+  font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column;
+  }
+
+  .project-image-carousel {
+    flex: 1;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .carousel-image{
+    max-height: 150px;
+  }
+}

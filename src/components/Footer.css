@@ -1,0 +1,31 @@
+/* Footer.css */
+
+.footer {
+  background-color: #1a1a1a; /* Dark background to match navbar and cards */
+  color: #f0f0f0; /* Light gray text */
+  padding: 1.5rem 0; /* Adjusted padding */
+  text-align: center;
+  font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem; /* Add margin for spacing between text and links */
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 15px; /* Adjusted link spacing */
+}
+
+.footer-links a {
+  color: #ccc; /* Lighter gray for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f0f0f0; /* Light gray on hover */
+  text-decoration: underline; /* Add underline on hover */
+}

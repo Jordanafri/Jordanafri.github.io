@@ -1,0 +1,46 @@
+/* app.css */
+
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.logo {
+  height: 4em; /* reduced logo size */
+  padding: 1em;/* reduced logo padding */
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: brightness(1.2); /* Lighten logo on hover */
+}
+
+.card {
+  padding: 1.5em; /* Reduced card padding */
+  background-color: #1a1a1a;
+  border-radius: 4px;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Animations */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
