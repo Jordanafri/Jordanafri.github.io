@@ -3,13 +3,65 @@ import './Projects.css';
 
 const projectData = [
     {
-        title: "Ecclesia Art Website - MVC .NET Core",
-        description: "An MVC .NET Core web application for an art e-commerce platform, featuring a robust relational database (SQL Server) with a product model and category foreign keys. Implements a repository pattern for data access and a class library structure for separation of concerns. Includes Microsoft Identity scaffolding for user authentication and authorization, supporting admin, customer, and employee roles. Key features include a shopping cart, admin dashboard, and PayPal payment gateway integration. Utilizes various NuGet packages for enhanced functionality and Bootstrap for responsive design.",
+        title: "Ecclesia Art E-Commerce",
+        shortDescription: "Full-featured art marketplace with payment processing",
+        longDescription: "Built a secure e-commerce platform handling 100+ products with user roles, shopping cart, and PayPal integration. Implemented:",
+        features: [
+            "Admin dashboard for product management",
+            "Role-based authentication system",
+            "Responsive design with Bootstrap",
+            "SQL Server database with EF Core"
+        ],
         repoLink: "https://github.com/Jordanafri/paypal.git",
         images: ["/EccMVC/EccHome.png", "/EccMVC/EccLog.png", "/EccMVC/EccProdDetails.png", "/EccMVC/EccCart.png", "/EccMVC/EccOrder.png", "/EccMVC/EccAdmin.png"],
-        technologies: [".NET Core MVC", "C#", "SQL Server", "Entity Framework Core", "ASP.NET Identity", "PayPal API", "Bootstrap", "HTML", "CSS", "JavaScript"],
+        technologies: [
+            {name: ".NET Core", level: "advanced"},
+            {name: "C#", level: "intermediate"},
+            {name: "SQL Server", level: "intermediate"},
+            {name: "PayPal API", level: "beginner"}
+        ],
+        impact: "Enabled artist clients to sell work online with secure transactions"
     },
-    // ... other projects
+    {
+        title: "Ecclesia Art (React/Firebase)",
+        shortDescription: "React version with Firebase backend (In Development)",
+        longDescription: "Rebuilding the e-commerce platform with React frontend and Firebase backend. Planned features:",
+        features: [
+            "Firestore database integration",
+            "React context for state management",
+            "Firebase authentication",
+            "Cloud functions for payments"
+        ],
+        repoLink: "#",
+        images: ["/EccReactFireBase/GeminiEcclesia.jpg"],
+        technologies: [
+            {name: "React", level: "intermediate"},
+            {name: "Firebase", level: "beginner"},
+            {name: "JavaScript", level: "intermediate"}
+        ],
+        impact: "Modernizing platform with serverless architecture",
+        status: "wip"
+    },
+    {
+        title: "Birthday Reminder App",
+        shortDescription: "Android app for tracking birthdays and gift ideas",
+        longDescription: "Upcoming native Android app to track contacts' birthdays and gift preferences. Planned features:",
+        features: [
+            "Local storage of contact info",
+            "Birthday notifications",
+            "Digital card creation",
+            "Gift idea tracking"
+        ],
+        repoLink: "#",
+        images: ["/GeminiBirthday.jpg"],
+        technologies: [
+            {name: "Android Studio", level: "beginner"},
+            {name: "Java", level: "beginner"},
+            {name: "SQLite", level: "beginner"}
+        ],
+        impact: "Helping users remember important dates and gift preferences",
+        status: "planned"
+    }
 ];
 
 const Projects = () => {
@@ -61,34 +113,50 @@ const Projects = () => {
         <div className="projects-container">
             <h1>Projects Page</h1>
             <p>Here are some of the projects I've worked on:</p>
-            <ul className="projects-list">
+            <div className="projects-grid">
                 {projectData.map((project, index) => (
-                    <li key={index} className="project-item">
-                        <div className="project-image">
-                            <button className="project-nav prev" onClick={() => prevProjectImage(project)}>&#10094;</button>
-                            <img
-                                src={project.images[projectImageIndex]}
-                                alt={getImageAltText(project.images[projectImageIndex])} // Use filename as alt.
-                                className="carousel-image"
+                    <div key={index} className="project-card" data-status={project.status || "completed"}>
+                        <div className="card-header">
+                            <h2>{project.title}</h2>
+                            <p className="short-desc">{project.shortDescription}</p>
+                        </div>
+                        
+                        <div className="card-image">
+                            <img 
+                                src={project.images[0]} 
+                                alt={getImageAltText(project.images[0])}
                                 onClick={() => handleImageClick(project)}
                             />
-                            <button className="project-nav next" onClick={() => nextProjectImage(project)}>&#10095;</button>
                         </div>
-                        <div className="project-details">
-                            <h2>{project.title}</h2>
-                            <p>{project.description}</p>
-                            <div className="project-tech">
-                                {project.technologies.map((tech, techIndex) => (
-                                    <span key={techIndex} className="tech-badge">{tech}</span>
+
+                        <div className="card-body">
+                            <h3>Key Features:</h3>
+                            <ul className="feature-list">
+                                {project.features.map((feature, i) => (
+                                    <li key={i}>{feature}</li>
+                                ))}
+                            </ul>
+
+                            <h3>Technologies:</h3>
+                            <div className="tech-container">
+                                {project.technologies.map((tech, i) => (
+                                    <span key={i} className={`tech-badge ${tech.level}`}>
+                                        {tech.name}
+                                    </span>
                                 ))}
                             </div>
-                            <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="repo-link">
-                                GitHub Repository
+
+                            <p className="impact">{project.impact}</p>
+                        </div>
+
+                        <div className="card-footer">
+                            <a href={project.repoLink} className="repo-link">
+                                View Code
                             </a>
                         </div>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
 
             {selectedProject && (
                 <div className="image-modal" onClick={closeImageModal}>
