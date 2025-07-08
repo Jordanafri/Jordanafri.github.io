@@ -3,67 +3,48 @@
 .contact-page-container {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - /* Adjust for your header and footer heights */ 100px); /* Example adjustment */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    min-height: calc(100vh - 100px);
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     box-sizing: border-box;
-  }
-  
-  .contact-form-container {
-      width: 100%;
-      max-width: 600px;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #f0f0f0;
-  }
-  
-  input,
-  textarea {
+}
+
+.contact-info {
+    text-align: center;
+    max-width: 600px;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    background-color: #222;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #f0f0f0;
-    font-family: inherit;
-    font-size: 1em;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .submit-button {
-    background-color: #222;
-    color: #f0f0f0;
-    padding: 10px 15px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #333;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 10px;
-  }
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #61dafb;
+}
+
+.social-icon {
+    font-size: 24px;
+}
+
+#emailContact a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+#emailContact a:hover {
+    text-decoration: underline;
+}

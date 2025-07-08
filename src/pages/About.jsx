@@ -1,5 +1,5 @@
 import './About.css';
-import { FaHtml5, FaCss3Alt, FaSass, FaBootstrap, FaReact, FaDatabase, FaGitAlt, FaCloud, FaPython, FaCertificate, FaCode, FaGamepad, FaBloggerB } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaSass, FaBootstrap, FaReact, FaDatabase, FaGitAlt, FaCloud, FaPython, FaCertificate, FaCode, FaGamepad, FaBloggerB, FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 
 const About = () => {
   return (
@@ -8,7 +8,7 @@ const About = () => {
         <section className="intro-section fade-in">
           <div className="profile-header">
             <img 
-              src="/GeminiBirthday.jpg" 
+              src="/jordan.png" 
               alt="Jordan Afrikaner" 
               className="profile-photo"
             />
@@ -135,16 +135,16 @@ const About = () => {
             <p>I'm always open to connecting with fellow developers, mentors, and potential collaborators. Feel free to reach out through any of these channels:</p>
             <div className="social-links">
               <a href="https://github.com/Jordanafri/" target="_blank" rel="noopener noreferrer">
-                GitHub
+                <FaGithub className="social-icon" /> GitHub
               </a>
               <a href="https://www.instagram.com/jordan_afri" target="_blank" rel="noopener noreferrer">
-                Instagram
+                <FaInstagram className="social-icon" /> Instagram
               </a>
               <a href="https://www.linkedin.com/in/jordan-afrikaner-5030832a5" target="_blank" rel="noopener noreferrer">
-                LinkedIn
+                <FaLinkedin className="social-icon" /> LinkedIn
               </a>
               <a href="mailto:jordanafrikaner@outlook.com">
-                Email
+                <FaEnvelope className="social-icon" /> Email
               </a>
             </div>
           </div>

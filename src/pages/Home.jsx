@@ -1,4 +1,5 @@
 import './Home.css';
+import { FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
 import videoBg from './tech.mp4'; // Import your video
 
 const Home = () => {
@@ -15,8 +16,12 @@ const Home = () => {
           I'm eager to learn and contribute to exciting web development projects.
         </p>
         <div className="cta-buttons">
-          <a href="/projects" className="project-button">View My Web Projects</a>
-          <a href="/contact" className="contact-button">Get In Touch</a>
+          <a href="#/projects" className="project-button">
+            <FaProjectDiagram /> View My Web Projects
+          </a>
+          <a href="/contact" className="contact-button">
+            <FaEnvelope /> Get In Touch
+          </a>
         </div>
       </div>
     </div>

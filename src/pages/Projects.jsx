@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaGithub, FaExternalLinkAlt, FaCodeBranch, FaServer, FaDatabase, FaReact, FaFire } from 'react-icons/fa';
 import './Projects.css';
 
 const projectData = [
@@ -32,7 +33,7 @@ const projectData = [
             "Firebase authentication",
             "Cloud functions for payments"
         ],
-        repoLink: "#",
+        repoLink: "https://github.com/ElishaRaJa/EcclesiaArts-Backup-",
         images: ["/EccReactFireBase/GeminiEcclesia.jpg"],
         technologies: [
             {name: "React", level: "intermediate"},
@@ -43,24 +44,38 @@ const projectData = [
         status: "wip"
     },
     {
-        title: "Birthday Reminder App",
-        shortDescription: "Android app for tracking birthdays and gift ideas",
-        longDescription: "Upcoming native Android app to track contacts' birthdays and gift preferences. Planned features:",
+        title: "Anchored in Christ (Client Work)",
+        shortDescription: "Static React e-commerce site for Christian merchandise startup (In Development)",
+        longDescription: "Developed a marketing website for a Christian merchandise business with React and React Router. Future plans include Firebase integration and payment processing.",
+        status: "wip",
         features: [
-            "Local storage of contact info",
-            "Birthday notifications",
-            "Digital card creation",
-            "Gift idea tracking"
+            "React-based static website",
+            "React Router for navigation",
+            "Product showcase sections",
+            "Mission/vision presentation",
+            "Planned: Firebase integration",
+            "Planned: Online payment system"
         ],
-        repoLink: "#",
-        images: ["/GeminiBirthday.jpg"],
+        repoLink: "https://github.com/anchoredinchristpmb/anchoredinchristpmb",
+        liveLink: "https://anchoredinchristpmb.github.io/anchoredinchristpmb/",
+        images: [
+            "/AnchoredinChrist/Home(LandingPage).png",
+            "/AnchoredinChrist/ProductsPage.png",
+            "/AnchoredinChrist/Vision&Mission.png",
+            "/AnchoredinChrist/Footer.png"
+        ],
         technologies: [
-            {name: "Android Studio", level: "beginner"},
-            {name: "Java", level: "beginner"},
-            {name: "SQLite", level: "beginner"}
+            {name: "React", level: "intermediate"},
+            {name: "React Router", level: "intermediate"},
+            {name: "GitHub Pages", level: "intermediate"}
         ],
-        impact: "Helping users remember important dates and gift preferences",
-        status: "planned"
+        impact: "Helping a startup business establish online presence with zero hosting costs",
+        clientInfo: {
+            name: "Anchored in Christ",
+            mission: "To glorify Jesus Christ through Christian merchandise and personalized faith-based gifts",
+            vision: "To be a nationally recognized retail presence spreading the Gospel"
+        },
+        isClientWork: true
     }
 ];
 
@@ -111,8 +126,8 @@ const Projects = () => {
 
     return (
         <div className="projects-container">
-            <h1>Projects Page</h1>
-            <p>Here are some of the projects I've worked on:</p>
+            <h1>Projects & Client Work</h1>
+            <p>Here are some of my personal projects and client work:</p>
             <div className="projects-grid">
                 {projectData.map((project, index) => (
                     <div key={index} className="project-card" data-status={project.status || "completed"}>
@@ -141,6 +156,11 @@ const Projects = () => {
                             <div className="tech-container">
                                 {project.technologies.map((tech, i) => (
                                     <span key={i} className={`tech-badge ${tech.level}`}>
+                                        {tech.name === 'React' && <FaReact />}
+                                        {tech.name === 'Firebase' && <FaFire />}
+                                        {tech.name === '.NET Core' && <FaServer />}
+                                        {tech.name === 'SQL Server' && <FaDatabase />}
+                                        {tech.name === 'C#' && <FaCodeBranch />}
                                         {tech.name}
                                     </span>
                                 ))}
@@ -150,9 +170,20 @@ const Projects = () => {
                         </div>
 
                         <div className="card-footer">
-                            <a href={project.repoLink} className="repo-link">
-                                View Code
-                            </a>
+                            {project.isClientWork ? (
+                                <>
+                                    <a href={project.repoLink} className="repo-link" target="_blank" rel="noreferrer">
+                                        <FaGithub /> View Code
+                                    </a>
+                                    <a href={project.liveLink} className="repo-link" target="_blank" rel="noreferrer">
+                                        <FaExternalLinkAlt /> View Live
+                                    </a>
+                                </>
+                            ) : (
+                                <a href={project.repoLink} className="repo-link" target="_blank" rel="noreferrer">
+                                    View Code
+                                </a>
+                            )}
                         </div>
                     </div>
                 ))}

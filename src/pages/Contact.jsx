@@ -1,48 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [error, setError] = useState('');
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      setError('All fields are required');
-      return;
+  useEffect(() => {
+    const user = 'jordanafrikaner';
+    const domain = 'outlook.com'; 
+    const emailLink = document.getElementById('emailContact');
+    if (emailLink) {
+      emailLink.innerHTML = `<a href="mailto:${user}@${domain}">${user}@${domain}</a>`;
     }
-    alert('Form submitted!');
-  };
+  }, []);
 
   return (
-    <div className="contact-page-container"> {/* Added container div */}
-      <div className="contact-form-container">
-        <h1>Contact Page</h1>
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" value={formData.message} onChange={handleChange} />
-          </div>
-          {error && <p className="error-message">{error}</p>}
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
+    <div className="contact-page-container">
+      <h1>Contact Me</h1>
+      <div className="contact-info">
+        <p>Email me at: <span id="emailContact"></span></p>
+        <div className="social-links">
+          <a 
+            href="https://linkedin.com/in/jordan-afrikaner-5030832a5" 
+            target="_blank" 
+            rel="noreferrer"
+            className="social-link"
+          >
+            <FaLinkedin className="social-icon" /> LinkedIn
+          </a>
+          <a 
+            href="https://www.instagram.com/jordan_afri/" 
+            target="_blank" 
+            rel="noreferrer"
+            className="social-link"
+          >
+            <FaInstagram className="social-icon" /> Instagram
+          </a>
+        </div>
       </div>
     </div>
   );
